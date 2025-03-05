@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Apollo Tech - Implementare Chatbots AI Personalizați</title>
+    <meta name="title" content="Apollo Tech - Implementare Chatbots AI Personalizați">
+    <meta name="description" content="Transformă experiența clienților tăi cu chatboți AI personalizați. Oferim soluții de automatizare inteligentă pentru suport 24/7, generare de lead-uri și creșterea vânzărilor.">
+    <meta name="keywords" content="chatbot AI, automatizare, suport clienți, lead generation, ecommerce, inteligență artificială">
+    <meta name="author" content="Apollo Tech">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apollotech.agency/">
+    <meta property="og:title" content="Apollo Tech - Implementare Chatbots AI Personalizați">
+    <meta property="og:description" content="Transformă experiența clienților tăi cu chatboți AI personalizați. Oferim soluții de automatizare inteligentă pentru suport 24/7, generare de lead-uri și creșterea vânzărilor.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1676299081847-5c552c85fea7?q=80&w=2070&auto=format&fit=crop">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://apollotech.agency/">
+    <meta property="twitter:title" content="Apollo Tech - Implementare Chatbots AI Personalizați">
+    <meta property="twitter:description" content="Transformă experiența clienților tăi cu chatboți AI personalizați. Oferim soluții de automatizare inteligentă pentru suport 24/7, generare de lead-uri și creșterea vânzărilor.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1676299081847-5c552c85fea7?q=80&w=2070&auto=format&fit=crop">
+    
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://apollotech.agency/">
+    <meta name="theme-color" content="#0c2557">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/src/index.css" as="style">
+    <link rel="preload" href="/src/main.tsx" as="script">
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '379346594794909');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body>
+    <!-- Meta Pixel Noscript -->
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=379346594794909&ev=PageView&noscript=1"/>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Fallback for direct route access
+      (function() {
+        var pathname = window.location.pathname;
+        if (pathname !== '/' && !document.getElementById('root').hasChildNodes()) {
+          window.location.href = '/';
+        }
+      })();
+    </script>
+    
+    <!-- Direct chatbot script inclusion as fallback -->
+    <script>
+      window.addEventListener('load', function() {
+        // Check if the chatbot script was already loaded by React
+        if (!document.getElementById('apollo-chatbot-script') && 
+            !document.getElementById('apollo-chatbot-script-fallback') && 
+            !document.getElementById('apollo-chatbot-script-app') &&
+            !document.getElementById('apollo-chatbot-direct') &&
+            !document.getElementById('apollo-chatbot-embedded')) {
+          
+          console.log('Loading chatbot script directly from HTML');
+          
+          // Use direct embed approach
+          const script = document.createElement('script');
+          script.id = "apollo-chatbot-script-fallback";
+          script.innerHTML = `
+            (function() {
+              const script = document.createElement('script');
+              script.src = "https://apollotech.agency/bubble-embed.js";
+              script.dataset.kbId = "cbbb0fe8-2db2-4abb-8458-30a550e74774";
+              script.dataset.token = "d2b7fc8b-067d-4436-ac96-d974026453e7";
+              script.dataset.modeltype = "gpt-4-omnimodel-mini";
+              script.dataset.tabs = "false";
+              document.body.appendChild(script);
+            })();
+          `;
+          document.body.appendChild(script);
+        }
+      });
+    </script>
+    
+    <!-- Direct embed as a last resort -->
+    <script>
+      setTimeout(function() {
+        if (!document.querySelector('.bubble-element')) {
+          console.log('Last resort: direct script embed');
+          const script = document.createElement('script');
+          script.src = "https://apollotech.agency/bubble-embed.js";
+          script.dataset.kbId = "cbbb0fe8-2db2-4abb-8458-30a550e74774";
+          script.dataset.token = "d2b7fc8b-067d-4436-ac96-d974026453e7";
+          script.dataset.modeltype = "gpt-4-omnimodel-mini";
+          script.dataset.tabs = "false";
+          document.body.appendChild(script);
+        }
+      }, 3000);
+    </script>
+  </body>
+</html>
